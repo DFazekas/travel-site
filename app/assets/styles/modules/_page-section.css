@@ -1,0 +1,9 @@
+.page-section {
+    /* Add vertical padding but no horizontal padding. */
+    padding: 4.5rem 0;
+    
+    &--blue {
+        background-color: $mainBlue;
+        color: #FFF;
+    }
+}
