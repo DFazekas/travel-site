@@ -451,13 +451,19 @@ template {
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	color: #333; 
+    font-family: 'Roboto', sans-serif;
+    color: #333; 
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+* {
+    /* Overwrite how browsers compute size. */
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .large-hero {
@@ -553,6 +559,9 @@ img {
     }
 
 .wrapper {
+    /* Corrects spacing of gutter on last column. */
+    overflow: hidden;
+    
     padding-left: 18px;
     padding-right: 18px;
     max-width: 1200px;
@@ -637,4 +646,38 @@ img {
 .headline--b-margin-large {
         /* em is relative to the font-size of the element. */ 
         margin-bottom: 1.6em;
+    }
+
+/* Fix floating children */
+
+.row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+.row--gutters {
+        /* Clears gap on last column when combined with overflow:hidden on parent div. */
+        margin-right: -65px;
+    }
+
+.row--gutters > div {
+        /* Adds a gap b/w columns. */
+        padding-right: 65px;
+    }
+
+@media(min-width: 800px) {
+
+.row {
+        /* Two columns (4/8 ratio) on medium+ screens. */
+
+}
+        .row__medium-4 {
+            float: left;
+            width: 33.33%
+        }
+        .row__medium-8 {
+            float: left;
+            width: 66.66%;
+        }
     }

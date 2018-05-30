@@ -1,0 +1,28 @@
+.row {
+    /* Fix floating children */
+    @mixin clearfix;
+
+    &--gutters {
+        /* Clears gap on last column when combined with overflow:hidden on parent div. */
+        margin-right: -65px;
+    }
+
+    &--gutters > div {
+        /* Adds a gap b/w columns. */
+        padding-right: 65px;
+    }
+
+    @mixin atMedium {
+        /* Two columns (4/8 ratio) on medium+ screens. */
+        &__medium-4 {
+            float: left;
+            width: 33.33%
+        }
+        &__medium-8 {
+            float: left;
+            width: 66.66%;
+        }
+    }
+
+}
+
