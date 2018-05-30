@@ -1,0 +1,30 @@
+.large-hero {
+    position: relative;
+
+    &__text-content {
+        /* Place in top left of image */
+        position: absolute;
+        left: 0;
+        /* Center vertically */
+        top: 50%;
+        transform: translateY(-50%);
+        /* Center horizontally */
+        width: 100%;
+        text-align: center;
+    }
+
+    &__title {
+        font-weight: 300;
+        color: #2f5572;
+        font-size: 4.8rem;
+    }
+
+    &__subtitle {
+        font-weight: 300;
+        color: #2f5572;
+        font-size: 2.9rem;
+    }
+}
+
+
+
