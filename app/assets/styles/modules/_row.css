@@ -12,7 +12,17 @@
         padding-right: 65px;
     }
 
+    &__b-margin-until-medium {
+        /* Very small screens need bottom margin. */
+        margin-bottom: 1rem;
+    }
+    
     @mixin atMedium {
+        /* Remove previously added bottom margin for larger screens. */
+        &__b-margin-until-medium {
+            margin-bottom: 0;
+        }
+        
         /* Two columns (4/8 ratio) on medium+ screens. */
         &__medium-4 {
             float: left;
