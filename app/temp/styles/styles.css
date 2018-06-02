@@ -680,9 +680,19 @@ a {
         margin-right: -65px;
     }
 
+.row--gutters-large {
+        /* Clears gap on last column when combined with overflow:hidden on parent div. */
+        margin-right: -100px;
+    }
+
 .row--gutters > div {
         /* Adds a gap b/w columns. */
         padding-right: 65px;
+    }
+
+.row--gutters-large > div {
+        /* Adds a gap b/w columns. */
+        padding-right: 100px;
     }
 
 .row__b-margin-until-medium {
@@ -691,38 +701,44 @@ a {
     }
 
 @media(min-width: 800px) {
-
-.row {
-        /* Remove previously added bottom margin for larger screens. */
-        
-        /* Two columns (4/8 ratio) on medium+ screens. */
-
-}
         .row__b-margin-until-medium {
+            /* Remove previously added bottom margin for larger screens. */
             margin-bottom: 0;
         }
+        
         .row__medium-4 {
+            /* Creates a column of 4/12 of the screen width. */
             float: left;
             width: 33.33%
         }
 
         .row__medium-4--larger {
+            /* Creates a column of 4/12 (plus extra) of the screen width. */
             width: 37%;
         }
 
+        .row__medium-6 {
+            /* Creates a column of 6/12 of the screen width. */
+            float: left;
+            width: 50%;
+        }
+        
         .row__medium-8 {
+            /* Creates a column of 8/12 of the screen width. */
             float: left;
             width: 66.66%;
         }
 
         .row__medium-8--smaller {
+            /* Creates a column of 8/12 (minus a bit) of the screen width. */
             width: 63%;
         }
     }
 
 .generic-content-container p {
+        font-weight: 300;
         line-height: 1.65;
-        marign: 1.8rem 0;
+        marign: 0 0 1.8rem 0;
     }
 
 @media(min-width: 530px) {
@@ -748,4 +764,24 @@ a {
 
 .section-title__icon {
         margin-right: 0.5rem;
+    }
+
+.feature-item {
+    /* Indent item rightwards. */
+    position: relative;
+    padding-left: 94px;
+    /* Add vertical spacing b/w items. */
+    padding-bottom: 2.5rem;
+}
+
+.feature-item__icon {
+        /* Align item icon alongside text. */
+        position: absolute;
+        left: 0;
+    }
+
+.feature-item__title {
+        font-size: 1.875rem;
+        font-weight: 300;
+        margin-bottom: 0.8rem;
     }
