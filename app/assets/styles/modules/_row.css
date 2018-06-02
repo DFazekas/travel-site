@@ -2,11 +2,21 @@
     /* Fix floating children */
     @mixin clearfix;
 
+    &--t-padding {
+        /* Adds top padding to the row. */
+        padding-top: 80px;
+    }
+
     &--gutters {
         /* Clears gap on last column when combined with overflow:hidden on parent div. */
         margin-right: -65px;
     }
-    
+
+    &--gutters-small {
+        /* Clears gap on last column when combined with overflow:hidden on parent div. */
+        margin-right: -45px;
+    }
+
     &--gutters-large {
         /* Clears gap on last column when combined with overflow:hidden on parent div. */
         margin-right: -100px;
@@ -16,7 +26,12 @@
         /* Adds a gap b/w columns. */
         padding-right: 65px;
     }
-    
+
+    &--gutters-small > div {
+        /* Reduces gap b/w columns. */
+        padding-right: 45px;
+    }
+
     &--gutters-large > div {
         /* Adds a gap b/w columns. */
         padding-right: 100px;
@@ -26,13 +41,13 @@
         /* Very small screens need bottom margin. */
         margin-bottom: 1rem;
     }
-    
+
     @mixin atMedium {
         &__b-margin-until-medium {
             /* Remove previously added bottom margin for larger screens. */
             margin-bottom: 0;
         }
-        
+
         &__medium-4 {
             /* Creates a column of 4/12 of the screen width. */
             float: left;
@@ -49,7 +64,7 @@
             float: left;
             width: 50%;
         }
-        
+
         &__medium-8 {
             /* Creates a column of 8/12 of the screen width. */
             float: left;
@@ -62,5 +77,16 @@
         }
     }
 
+    /* Begin Equal Height Rules */
+    &--equal-height-at-medium {
+        @mixin atMedium {
+            display: flex;
+        }
+
+        & > div {
+            float: none;
+            display: flex;
+        }
+    }
 }
 

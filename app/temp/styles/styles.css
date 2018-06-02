@@ -611,6 +611,11 @@ a {
         color: #FFF;
     }
 
+.page-section--testimonials {
+        background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+        background-size: cover;
+    }
+
 .headline {
     font-weight: 300;
     font-size: 1.9rem;
@@ -675,9 +680,19 @@ a {
         display: table;
     }
 
+.row--t-padding {
+        /* Adds top padding to the row. */
+        padding-top: 80px;
+    }
+
 .row--gutters {
         /* Clears gap on last column when combined with overflow:hidden on parent div. */
         margin-right: -65px;
+    }
+
+.row--gutters-small {
+        /* Clears gap on last column when combined with overflow:hidden on parent div. */
+        margin-right: -45px;
     }
 
 .row--gutters-large {
@@ -688,6 +703,11 @@ a {
 .row--gutters > div {
         /* Adds a gap b/w columns. */
         padding-right: 65px;
+    }
+
+.row--gutters-small > div {
+        /* Reduces gap b/w columns. */
+        padding-right: 45px;
     }
 
 .row--gutters-large > div {
@@ -705,7 +725,7 @@ a {
             /* Remove previously added bottom margin for larger screens. */
             margin-bottom: 0;
         }
-        
+
         .row__medium-4 {
             /* Creates a column of 4/12 of the screen width. */
             float: left;
@@ -722,7 +742,7 @@ a {
             float: left;
             width: 50%;
         }
-        
+
         .row__medium-8 {
             /* Creates a column of 8/12 of the screen width. */
             float: left;
@@ -734,6 +754,24 @@ a {
             width: 63%;
         }
     }
+
+/* Begin Equal Height Rules */
+
+@media(min-width: 800px) {
+
+.row--equal-height-at-medium {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex
+    }
+    }
+
+.row--equal-height-at-medium > div {
+            float: none;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
 
 .generic-content-container p {
         font-weight: 300;
@@ -770,6 +808,11 @@ a {
         font-weight: 500;
     }
 
+.section-title--blue {
+        /* Changes title color to blue. */
+        color: #2f5572;
+    }
+
 .section-title__icon {
         /* Place title icon on newline and vertically centered for mobile. */
         display: block;
@@ -781,6 +824,9 @@ a {
 @media(min-width: 530px) {
 
 .section-title__icon {
+            position: relative;
+            top: 8px;
+            
             /* Place icon alongside text on larger screens. */
             margin-right: 0.5rem;
             /* Offtset margin set for mobile. */
@@ -838,4 +884,39 @@ a {
             margin-top: 1em;
             text-align: left
     }
+    }
+
+.testimonial {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0 1.8125rem 1px 1.8125rem;
+}
+
+.testimonial__photo {
+        /* Round the image. */
+        border-radius: 80px;
+        border: 6px solid rgba(255, 255, 255, 0.8); 
+        overflow: hidden;
+        width: 160px;
+        height: 160px;
+        /* Center image horizontally & pull below content upwards. */
+        margin: 0 auto -80px auto;
+        /* Move image above container. */
+        position: relative;
+        top: -80px;
+    }
+
+.testimonial__title {
+        color: #2f5572;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0; 
+    }
+
+.testimonial__subtitle {
+        color: #d59541;
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.9375rem;
+        margin: 0.25rem 0 1rem 0;
     }
