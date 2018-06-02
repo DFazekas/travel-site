@@ -753,35 +753,89 @@ a {
     }
 
 .section-title {
-    font-size: 3.75rem;
+    font-size: 2.55rem;
     font-weight: 300;
     text-align: center;
 }
+
+@media(min-width: 530px) {
+
+.section-title {
+        /* Enlarge title font size on larger screens. */
+        font-size: 3.75rem
+}
+    }
 
 .section-title strong {
         font-weight: 500;
     }
 
 .section-title__icon {
-        margin-right: 0.5rem;
+        /* Place title icon on newline and vertically centered for mobile. */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.6rem;
+    }
+
+@media(min-width: 530px) {
+
+.section-title__icon {
+            /* Place icon alongside text on larger screens. */
+            margin-right: 0.5rem;
+            /* Offtset margin set for mobile. */
+            margin-left: 0;
+            display: inline-block;
+            /* Undo margin for larger screens. */
+            margin-bottom: 0
+    }
     }
 
 .feature-item {
     /* Indent item rightwards. */
     position: relative;
-    padding-left: 94px;
     /* Add vertical spacing b/w items. */
     padding-bottom: 2.5rem;
 }
 
+@media(min-width: 530px) {
+
+.feature-item {
+        /* Indents righwards on larger sceens. */
+        padding-left: 94px
+}
+    }
+
 .feature-item__icon {
-        /* Align item icon alongside text. */
-        position: absolute;
-        left: 0;
+        /* Place icon newline and horizontally center. */
+        display: block;
+        margin: 0 auto;
+    }
+
+@media(min-width: 530px) {
+
+.feature-item__icon {
+            /* Align item icon alongside text. */
+            position: absolute;
+            left: 0
+    }
     }
 
 .feature-item__title {
-        font-size: 1.875rem;
+        /* Feature item titles horizontally center on mobile. */
         font-weight: 300;
         margin-bottom: 0.8rem;
+        margin-top: 0.7em;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+@media(min-width: 530px) {
+
+.feature-item__title {
+            /* Enlarge title size and align center on larger screens. */
+            font-size: 1.875rem;
+            margin-top: 1em;
+            text-align: left
+    }
     }
