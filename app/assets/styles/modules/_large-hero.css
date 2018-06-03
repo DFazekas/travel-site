@@ -8,6 +8,8 @@
     }
     
     &__text-content {
+        /* Offset header top margin */
+        padding-top: 60px;
         /* Place in top left of image */
         position: absolute;
         left: 0;
