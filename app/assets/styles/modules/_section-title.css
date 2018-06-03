@@ -1,0 +1,40 @@
+.section-title {
+    font-size: 2.55rem;
+    font-weight: 300;
+    text-align: center;
+
+    @mixin atSmall {
+        /* Enlarge title font size on larger screens. */
+        font-size: 3.75rem;
+    }
+
+    strong {
+        font-weight: 500;
+    }
+    
+    &--blue {
+        /* Changes title color to blue. */
+        color: $mainBlue;
+    }
+
+    &__icon {
+        /* Place title icon on newline and vertically centered for mobile. */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.6rem;
+
+        @mixin atSmall {
+            position: relative;
+            top: 8px;
+            
+            /* Place icon alongside text on larger screens. */
+            margin-right: 0.5rem;
+            /* Offtset margin set for mobile. */
+            margin-left: 0;
+            display: inline-block;
+            /* Undo margin for larger screens. */
+            margin-bottom: 0;
+        }
+    }
+}
