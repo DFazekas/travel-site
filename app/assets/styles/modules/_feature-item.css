@@ -1,0 +1,39 @@
+.feature-item {
+    /* Indent item rightwards. */
+    position: relative;
+    /* Add vertical spacing b/w items. */
+    padding-bottom: 2.5rem;
+
+    @mixin atSmall {
+        /* Indents righwards on larger sceens. */
+        padding-left: 94px;
+    }
+
+    &__icon {
+        /* Place icon newline and horizontally center. */
+        display: block;
+        margin: 0 auto;
+
+        @mixin atSmall {
+            /* Align item icon alongside text. */
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    &__title {
+        /* Feature item titles horizontally center on mobile. */
+        font-weight: 300;
+        margin-bottom: 0.8rem;
+        margin-top: 0.7em;
+        font-size: 1.6rem;
+        text-align: center;
+
+        @mixin atSmall {
+            /* Enlarge title size and align center on larger screens. */
+            font-size: 1.875rem;
+            margin-top: 1em;
+            text-align: left;
+        }
+    }
+}
