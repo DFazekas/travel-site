@@ -1,0 +1,18 @@
+/* Gulp svg package makes use of something called 'mustash templete system'. 
+    Acts as a loop for each item being processed. 
+    Retrieve icon properties to be used on the sprite. */ 
+
+
+{{#shapes}}
+    {{#first}}
+        .icon {
+            background-image: url('/assets/images/sprites/{{{sprite}}}');
+        }
+    {{/first}}
+    
+    .icon--{{base}} {
+        width: {{width.outer}}px;
+        height: {{height.outer}}px;
+        background-position: {{position.relative.xy}}
+    }
+{{/shapes}}
