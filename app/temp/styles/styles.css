@@ -1163,8 +1163,17 @@ a {
     padding: 10px 0;
     position: absolute;
     width: 100%;
+    /* Overlay rest of site. */
     z-index: 2;
+    /* Transition header content toggling visibility. */
+    -webkit-transition: background-color .3s ease-out;
+    transition: background-color .3s ease-out;
 }
+
+.site-header--is-expanded {
+        /* Toggle background transparency for menu content on icon onclick. */
+        background-color: rgba(47,85,114, .55);
+    }
 
 @media(min-width: 800px) {
 
@@ -1173,8 +1182,11 @@ a {
 }
     }
 
+@media(min-width: 800px) {
+
 .site-header__btn-container {
-        float: right;
+            float: right
+    }
     }
 
 .site-header__logo {
@@ -1212,6 +1224,8 @@ a {
         position: absolute;
         top: 10px;
         right: 10px;
+        /* Menu content overlays icon - raise icon above menu content to allow interactivity. */
+        z-index: 10;
     }
 
 @media(min-width: 800px) {
@@ -1222,22 +1236,62 @@ a {
     }
 
 .site-header__menu-content {
-        display: none;
+        opacity: 0;
+        /* Opacity simply hides content but it doesn't prevent user interaction. 
+           Bury content to prevent this with relative z-index. */
+        position: relative;
+        z-index: -10;
+        padding-top: 90px;
+        text-align: center;
+        /* Zoom-out effect at 20% original size. */
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+        /* Transition opacity change. */
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
     }
 
 @media(min-width: 800px) {
 
 .site-header__menu-content {
-            display: block
+            /* Sets menu content always visible on larger screens. */
+            opacity: 1;
+            z-index: 1;
+            /* Offset mobile top padding. */
+            padding-top: 0;
+            /* Cancel mobile scaling effect. */
+            -webkit-transform: scale(1);
+                    transform: scale(1)
     }
     }
 
 .site-header__menu-content--is-visible {
-            display: block;
+            /* Sets menu content temporarily visible on mobile when icon is clicked. */
+            opacity: 1;
+            /* Unbury content to allow interactivity. */
+            z-index: 1;
+            /* Return to natural size. */
+            -webkit-transform: scale(1);
+                    transform: scale(1);
         }
 
+.primary-nav {
+    padding-top: 10px;
+}
+
+@media(min-width: 800px) {
+
+.primary-nav {
+        /* Offset mobile top-padding. */
+        padding-top: 0
+}
+    }
+
+@media(min-width: 800px) {
+
 .primary-nav--pull-right {
-        float: right;
+            float: right
+    }
     }
 
 .primary-nav ul {
@@ -1253,14 +1307,51 @@ a {
 
 .primary-nav li {
         list-style: none;
-        float: left;
-        padding-right: 20px;
+        padding-right: 7px;
+        /* Horizontally centered. */
+        display: inline-block;
+    }
+
+@media(min-width: 800px) {
+
+.primary-nav li {
+            float: left;
+            /* Offset mobile horizontal center. */
+            display: block;
+            /* Offset mobile thin padding. */
+            padding-right: 20px
+    }
+    }
+
+.primary-nav li:last-child {
+        /* The last 'li' doesn't need right-padding, there's nothing after it. */
+        padding-right: 0;
+    }
+
+@media(min-width: 800px) {
+
+.primary-nav li:last-child {
+            /* Offset mobile lack of right-padding. */
+            padding-right: 20px
+    }
     }
 
 .primary-nav a {
         color: #FFF;
         text-decoration: none;
         font-weight: 300;
-        padding: 12px 0;
+        padding: 5px 8px;
+        font-size: 0.8rem;
         display: block;
+        background-color: rgba(47,85,114, 0.5); 
+    }
+
+@media(min-width: 800px) {
+
+.primary-nav a {
+            padding: 12px 0;
+            font-size: 1rem;
+            /* Cancel mobile background color. */
+            background-color: transparent 
+    }
     }

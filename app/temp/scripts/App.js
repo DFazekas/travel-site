@@ -103,8 +103,9 @@ var MobileMenu = function () {
     function MobileMenu() {
         _classCallCheck(this, MobileMenu);
 
-        this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
-        this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
+        this.siteHeader = (0, _jquery2.default)(".site-header"); // Used for togging transparency for menuContent for mobile.
+        this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon"); // Used for onclick handler for mobile.
+        this.menuContent = (0, _jquery2.default)(".site-header__menu-content"); // Used for toggling visibility for mobile.
         this.events();
     }
 
@@ -120,6 +121,7 @@ var MobileMenu = function () {
         value: function toggleTheMenu() {
             // Toggle visibility modifier of the menu content.
             this.menuContent.toggleClass("site-header__menu-content--is-visible");
+            this.siteHeader.toggleClass("site-header--is-expanded");
         }
     }]);
 

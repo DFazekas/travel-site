@@ -2,8 +2,9 @@ import $ from 'jquery';
 
 class MobileMenu {
     constructor() {
-        this.menuIcon = $(".site-header__menu-icon");
-        this.menuContent = $(".site-header__menu-content");
+        this.siteHeader = $(".site-header"); // Used for togging transparency for menuContent for mobile.
+        this.menuIcon = $(".site-header__menu-icon"); // Used for onclick handler for mobile.
+        this.menuContent = $(".site-header__menu-content"); // Used for toggling visibility for mobile.
         this.events();
     }
     
@@ -16,6 +17,7 @@ class MobileMenu {
     toggleTheMenu() {
         // Toggle visibility modifier of the menu content.
         this.menuContent.toggleClass("site-header__menu-content--is-visible");
+        this.siteHeader.toggleClass("site-header--is-expanded");
     }
 }
 
