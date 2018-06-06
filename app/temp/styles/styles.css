@@ -481,8 +481,8 @@ a {
     }
 
 .large-hero__text-content {
-        /* Offset header top margin */
-        padding-top: 60px;
+        /* Offset header-logo top margin */
+        padding-top: 88px;
         /* Place in top left of image */
         position: absolute;
         left: 0;
@@ -493,6 +493,14 @@ a {
         /* Center horizontally */
         width: 100%;
         text-align: center;
+    }
+
+@media(min-width: 800px) {
+
+.large-hero__text-content {
+            /* Offset header top margin */
+            padding-top: 60px
+    }
     }
 
 .large-hero__title {
@@ -1156,8 +1164,14 @@ a {
     position: absolute;
     width: 100%;
     z-index: 2;
-    background-color: rgba(47,85,114, 0.3);
 }
+
+@media(min-width: 800px) {
+
+.site-header {
+        background-color: rgba(47,85,114, 0.3)
+}
+    }
 
 .site-header__btn-container {
         float: right;
@@ -1168,11 +1182,59 @@ a {
         top: 0;
         background-color: #2f5572;
         padding: 25px 36px;
+        /* Align horizontally and shrink */
+        left: 50%;
+        -webkit-transform: translateX(-50%) scale(0.8);
+                transform: translateX(-50%) scale(0.8);
+        -webkit-transform-origin: 50% 0;
+                transform-origin: 50% 0;
+    }
+
+@media(min-width: 800px) {
+
+.site-header__logo {
+            /* Align left of screen */
+            left: auto;
+            -webkit-transform: translatex(0);
+                    transform: translatex(0)
+    }
     }
 
 .site-header__logo__graphic {
         text-indent: -9999px;
     }
+
+.site-header__menu-icon {
+        width: 20px;
+        height: 20px;
+        background-color: #FFF;
+        /* Position top-right corner. */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+@media(min-width: 800px) {
+
+.site-header__menu-icon {
+            display: none
+    }
+    }
+
+.site-header__menu-content {
+        display: none;
+    }
+
+@media(min-width: 800px) {
+
+.site-header__menu-content {
+            display: block
+    }
+    }
+
+.site-header__menu-content--is-visible {
+            display: block;
+        }
 
 .primary-nav--pull-right {
         float: right;

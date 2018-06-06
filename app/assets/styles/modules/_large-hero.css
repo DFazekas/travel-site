@@ -8,8 +8,8 @@
     }
     
     &__text-content {
-        /* Offset header top margin */
-        padding-top: 60px;
+        /* Offset header-logo top margin */
+        padding-top: 88px;
         /* Place in top left of image */
         position: absolute;
         left: 0;
@@ -19,6 +19,11 @@
         /* Center horizontally */
         width: 100%;
         text-align: center;
+        
+        @mixin atMedium {
+            /* Offset header top margin */
+            padding-top: 60px;
+        }
     }
 
     &__title {
