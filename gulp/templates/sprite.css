@@ -1,12 +1,15 @@
-/* Gulp svg package makes use of something called 'mustash templete system'. 
-    Acts as a loop for each item being processed. 
-    Retrieve icon properties to be used on the sprite. */ 
+/* Do not edit modules/_sprite directory as it is generated automatically by Gulp.
+Instead edit gulp/templates/sprite. */ 
 
 
 {{#shapes}}
     {{#first}}
         .icon {
             background-image: url('/assets/images/sprites/{{{sprite}}}');
+        }
+        
+        .no-svg .icon {
+            background-image: url('/assets/images/sprites/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');
         }
     {{/first}}
     
