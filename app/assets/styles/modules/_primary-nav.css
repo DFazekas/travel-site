@@ -58,6 +58,10 @@
             font-size: 1rem;
             /* Cancel mobile background color. */
             background-color: transparent;
+            
+            &.is-current-link {
+                color: #FABB69;
+            }
         } 
     }
 }
