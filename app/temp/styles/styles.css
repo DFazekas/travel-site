@@ -1479,8 +1479,8 @@ a {
     visibility: hidden;
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
-    -webkit-transition: all 0.3 ease-out;
-    transition: all 0.3 ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .modal--is-visible {

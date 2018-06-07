@@ -10,7 +10,7 @@
     opacity: 0;
     visibility: hidden;
     transform: scale(1.2);
-    transition: all 0.3 ease-out;
+    transition: all 0.3s ease-out;
     
     &--is-visible {
         opacity: 1;
