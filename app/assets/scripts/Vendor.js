@@ -1,0 +1,2 @@
+/* Independent packages. */
+import 'lazysizes'; 

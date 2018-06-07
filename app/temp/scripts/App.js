@@ -11276,6 +11276,8 @@ var StickyHeader = function () {
     function StickyHeader() {
         _classCallCheck(this, StickyHeader);
 
+        /* Recalculate Waypoints whenever a lazy image gets loaded in. */
+        this.lazyImages = (0, _jquery2.default)(".lazyload");
         /* Change site header transparency during scroll on larger screens. */
         this.siteHeader = (0, _jquery2.default)(".site-header");
         this.headerTriggerElement = (0, _jquery2.default)(".large-hero__title");
@@ -11284,9 +11286,21 @@ var StickyHeader = function () {
         this.headerLinks = (0, _jquery2.default)(".primary-nav a");
         this.createPageSectionWaypoints();
         this.addSmoothScrolling();
+        this.refreshWaypoints();
     }
 
     _createClass(StickyHeader, [{
+        key: 'refreshWaypoints',
+        value: function refreshWaypoints() {
+            /* Waypoints calculates the vertical spacing of its element when the document loads. 
+             * However, lazyloaded images haven't been account for.
+             * In order to fix this miscalculation, we refresh all Waypoints everytime any lazy image gets loaded. */
+            this.lazyImages.on('load', function () {
+                /* This also affects RevealOnScroll so no need to call twice. */
+                Waypoint.refreshAll();
+            });
+        }
+    }, {
         key: 'addSmoothScrolling',
         value: function addSmoothScrolling() {
             this.headerLinks.smoothScroll();

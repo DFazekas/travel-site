@@ -4,6 +4,8 @@ import smoothScroll from "jquery-smooth-scroll";
 
 class StickyHeader {
     constructor() {
+        /* Recalculate Waypoints whenever a lazy image gets loaded in. */
+        this.lazyImages = $(".lazyload");
         /* Change site header transparency during scroll on larger screens. */
         this.siteHeader = $(".site-header");
         this.headerTriggerElement = $(".large-hero__title");
@@ -12,6 +14,17 @@ class StickyHeader {
         this.headerLinks = $(".primary-nav a");
         this.createPageSectionWaypoints();
         this.addSmoothScrolling();
+        this.refreshWaypoints();
+    }
+    
+    refreshWaypoints() {
+        /* Waypoints calculates the vertical spacing of its element when the document loads. 
+         * However, lazyloaded images haven't been account for.
+         * In order to fix this miscalculation, we refresh all Waypoints everytime any lazy image gets loaded. */
+        this.lazyImages.on('load', function() {
+            /* This also affects RevealOnScroll so no need to call twice. */
+            Waypoint.refreshAll();
+        });
     }
     
     addSmoothScrolling() {
