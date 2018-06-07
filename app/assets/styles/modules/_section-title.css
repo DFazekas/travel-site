@@ -16,6 +16,11 @@
         /* Changes title color to blue. */
         color: $mainBlue;
     }
+    
+    &--less-margin {
+        margin-bottom: 1.3rem;
+        margin-top: 0;
+    }
 
     &__icon {
         /* Place title icon on newline and vertically centered for mobile. */
