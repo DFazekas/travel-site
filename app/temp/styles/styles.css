@@ -1233,8 +1233,8 @@ Instead edit gulp/templates/sprite. */
             /* Shrink logo when header darkens on larger screens. */
     }
             .site-header--dark .site-header__logo {
-                -webkit-transform: scale(0.56);
-                        transform: scale(0.56);
+                -webkit-transform: scale(0.553);
+                        transform: scale(0.553);
             }
     }
 

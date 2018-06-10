@@ -46,7 +46,7 @@
             transform: translatex(0);
             /* Shrink logo when header darkens on larger screens. */
             .site-header--dark & {
-                transform: scale(0.56);
+                transform: scale(0.553);
             }
         }
     }
