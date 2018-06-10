@@ -11284,6 +11284,7 @@ var StickyHeader = function () {
         this.createHeaderWaypoint();
         this.pageSections = (0, _jquery2.default)(".page-section");
         this.headerLinks = (0, _jquery2.default)(".primary-nav a");
+        this.logo = (0, _jquery2.default)(".site-header__logo").parent();
         this.createPageSectionWaypoints();
         this.addSmoothScrolling();
         this.refreshWaypoints();
@@ -11304,6 +11305,7 @@ var StickyHeader = function () {
         key: 'addSmoothScrolling',
         value: function addSmoothScrolling() {
             this.headerLinks.smoothScroll();
+            this.logo.smoothScroll();
         }
     }, {
         key: 'createHeaderWaypoint',
